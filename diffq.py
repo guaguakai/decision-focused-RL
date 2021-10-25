@@ -189,7 +189,7 @@ def compute_policy_hessian_inverse_vector_product(dl_dQ, env_parameter_var, env,
         U = torch.cat(U, dim=0).t() / np.sqrt(num_episodes)  # n by k matrix (n >> k)
         V = torch.cat(V, dim=0)     / np.sqrt(num_episodes)  # k by n matrix
 
-    elif backprop_method in [5,6,7]: # TODO
+    elif backprop_method in [5,6,7]:
         w_p_list = []
         for phi, total_log_likelihood, weight in zip(phi_list, total_log_likelihood_list, weights):
             tmp_gradient = torch.autograd.grad(torch.sqrt(phi), Q_var, retain_graph=True, create_graph=False)[0].flatten().view(1,-1)

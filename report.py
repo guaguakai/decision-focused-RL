@@ -131,8 +131,8 @@ def plot_figures(plot_dict, algorithm_list, item, filename, plot_legend=True):
             #     title_name = 'Tuberculosis'
             # ax.set_title(title_name, fontsize=24)
 
-    os.makedirs('./images', exist_ok=True)
-    plt.savefig('./images/{}.pdf'.format(filename), bbox_inches='tight')
+    os.makedirs('./figures', exist_ok=True)
+    plt.savefig('./figures/{}.pdf'.format(filename), bbox_inches='tight')
     plt.cla()
     plt.clf()
     plt.close()
@@ -172,37 +172,23 @@ if __name__ == '__main__':
 
             'snare-finding': {
                 # This part is the snare finding problem with random trajectories
+                # To switch to near-optimal trajectories, please change the "demo0" to "demo5"
                 'TS':                  'TS/0525-2200-penalty-noise0.75-demo0_backprop1_TS_DQN',
                 'DF-PG-Woodbury':      'DF/0525-2200-penalty-noise0.75-demo0_backprop1_DF_DQN',
                 'DF-PG-Identity':      'DF/0525-2200-penalty-noise0.75-demo0_backprop3_DF_DQN',
                 'DF-Bellman-Woodbury': 'DF/0525-2200-penalty-noise0.75-demo0_backprop5_DF_DQN',
                 'DF-Bellman-Identity': 'DF/0525-2200-penalty-noise0.75-demo0_backprop7_DF_DQN',
                 },
-            # 'snare-finding': {
-            #     # This part is the snare finding problem with near-optimal trajectories
-            #     'TS':                  'TS/0525-2200-penalty-noise0.75-demo5_backprop1_TS_DQN',
-            #     'DF-PG-Woodbury':      'DF/0525-2200-penalty-noise0.75-demo5_backprop1_DF_DQN',
-            #     'DF-PG-Identity':      'DF/0525-2200-penalty-noise0.75-demo5_backprop3_DF_DQN',
-            #     'DF-Bellman-Woodbury': 'DF/0525-2200-penalty-noise0.75-demo5_backprop5_DF_DQN',
-            #     'DF-Bellman-Identity': 'DF/0525-2200-penalty-noise0.75-demo5_backprop7_DF_DQN',
-            #     },
 
             'TB': {
                 # This part is the TB problem with random trajectories
+                # To switch to near-optimal trajectories, please change the "demo0" to "demo5"
                 'TS':                  'TS/0604-demo0_TS_DQN',
                 'DF-PG-Woodbury':      'DF/0604-demo0-backprop1_DF_DQN',
                 'DF-PG-Identity':      'DF/0604-demo0-backprop3_DF_DQN',
                 'DF-Bellman-Woodbury': 'DF/0604-demo0-backprop5_DF_DQN',
                 'DF-Bellman-Identity': 'DF/0604-demo0-backprop7_DF_DQN',
                 }
-            # 'TB': {
-            #     # This part is the TB problem with near-optimal trajectories
-            #     'TS':                  'TS/0604-demo5_TS_DQN',
-            #     'DF-PG-Woodbury':      'DF/0604-demo5-backprop1_DF_DQN',
-            #     'DF-PG-Identity':      'DF/0604-demo5-backprop3_DF_DQN',
-            #     'DF-Bellman-Woodbury': 'DF/0604-demo5-backprop5_DF_DQN',
-            #     'DF-Bellman-Identity': 'DF/0604-demo5-backprop7_DF_DQN',
-            #     }
             }
 
     # Ignore seeds with corrupted data
@@ -321,10 +307,6 @@ if __name__ == '__main__':
                     save_path = '{}/results/{}.csv'.format(domain, method)
                     # df_dict[method] = pd.concat(df_list).groupby(level=0).mean()
                     # df_dict[method].to_csv(save_path, index=False)
-# =======
-#                 all_df = all_df[all_df['epoch'] != -1]
-#                 all_df = all_df[all_df['epoch'] <= 50]
-# >>>>>>> 2ba32ea1f171c8dd67401f16ac2aeec2220b5939
 
                     full_df = pd.concat(df_list)
                     full_df_train    = full_df[[0,1,2,3]].copy().rename(columns={0: 'epoch', 1: 'loss', 2: 'strict_eval', 3: 'soft_eval'})
@@ -349,5 +331,5 @@ if __name__ == '__main__':
                     plot_dict[plot_key].append((method, method, tmp_mean, tmp_sem))
                     large_plot_dict[plot_key].append((method, method, tmp_mean, tmp_sem))
 
-                plot_figures(plot_dict, algorithm_list, item, "{}/{}_{}".format(domain, partition, item), plot_legend=False)
+                plot_figures(plot_dict, algorithm_list, item, "{}/{}_{}".format(domain, partition, item), plot_legend=True)
         plot_figures(large_plot_dict, algorithm_list, item, "{}".format(domain), plot_legend=True)

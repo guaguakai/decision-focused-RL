@@ -130,7 +130,6 @@ if __name__ == "__main__":
 
     # Set up model to predict the reward function
     # channel_size_list = [feature_size, 1]
-    # TODO: Change prediction sizes
     channel_size_list = [feature_size, 16, 8]
     net = MLP(channel_size_list=channel_size_list).to(device)
 
@@ -139,7 +138,6 @@ if __name__ == "__main__":
     optimizer = torch.optim.Adam(net.parameters(), lr=lr)
     # optimizer = torch.optim.SGD(net.parameters(), lr=lr)
 
-    # TODO: Save results on wandb
     if prefix == '':
         save_path = 'results/{}/{}_{}_seed{}.csv'.format(
             method, method, rl_method, seed)
