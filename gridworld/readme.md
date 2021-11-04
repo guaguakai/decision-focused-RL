@@ -2,7 +2,7 @@ This directory hosts the code for the Gridworld problem.
 
 
 <p align="center">
-    <img src="https://github.com/guaguakai/decision-focused-RL/blob/main/figures/gridworld.gif?raw=true" width="80%" height="80%">
+    <img src="https://github.com/guaguakai/decision-focused-RL/blob/main/figures/gridworld.gif?raw=true" width="30%" height="30%">
 </p>
 
 ## Problem Description
