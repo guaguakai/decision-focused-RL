@@ -1,6 +1,6 @@
-# [Learning MDPs from Features: Predict-Then-Optimize for Sequential Decision Problems by Reinforcement Learning](https://arxiv.org/abs/2106.03279)
+# Learning MDPs from Features: Predict-Then-Optimize for Sequential Decision Problems by Reinforcement Learning
 
-NeurIPS 2021 Spotlight
+NeurIPS 2021 Spotlight, [arXiv version](https://arxiv.org/abs/2106.03279)
 
 ## Project Description
 
