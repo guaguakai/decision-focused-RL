@@ -2,11 +2,12 @@
 
 NeurIPS 2021 Spotlight
 
+## Project Description
+
 <p align="center">
-    <img src="https://github.com/guaguakai/decision-focused-RL/blob/main/figures/framework.jpg?raw=true" width="75%" height="75%">
+    <img src="https://github.com/guaguakai/decision-focused-RL/blob/main/figures/framework.jpg?raw=true" width="80%" height="80%">
 </p>
 
-## Project Description
 This repository contains the implementation of the paper.
 The goal of this paper is to learn the missing MDP parameters of a sequential problem before solving the seqeuntial problem. This aligns with the "predict-then-optimize" framework where we have to infer the missing parameters in the sequential problem before we can solve the problem.
 Standard approaches often solve the "predict" and "optimize" problems separately, where a predictive model is trained to minimize the predictive loss on the missing parameters, and we can apply any sequential problem solvers, e.g., reinforcement learning algorithms, to solve the sequential problem with the predicted parameters.
