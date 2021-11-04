@@ -3,7 +3,7 @@
 NeurIPS 2021 Spotlight
 
 
-![alt text](https://github.com/guaguakai/decision-focused-RL/blob/main/figures/framework.png?raw=true)
+![alt text](https://github.com/guaguakai/decision-focused-RL/blob/main/figures/framework.pdf?raw=true)
 
 ## Project Description
 This repository contains the implementation of the paper.
