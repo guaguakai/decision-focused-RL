@@ -1,5 +1,7 @@
 This directory hosts the code for the Gridworld problem.
 
+![alt text](https://github.com/guaguakai/decision-focused-RL/blob/main/figures/gridworld.gif?raw=true)
+
 ## Problem Description
 We consider a 5x5 Gridworld environment with unknown rewards as our MDP problems with unknown parameters. The bottom left corner is the starting point and the top right corner is a safe state with a high reward drawn from a normal distribution N(5,1).
 The agent can walk between grid cells by going north, south, east, west, or deciding to stay in the current grid cells.

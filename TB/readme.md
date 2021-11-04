@@ -1,5 +1,7 @@
 This directory hosts the code for the Tuberculosis Adherence problem.
 
+![alt text](https://github.com/guaguakai/decision-focused-RL/blob/main/figures/patient.gif?raw=true)
+
 ## Problem Description
 There are a total of `num-patients` (deafult 5) patients who need to take their medication at each time-step for 30 time-steps. For each patient, there are 2 states -- non-adhering (0), and adhering (1). The patients are assumed to start from an adhering state (`start-adhering=1`) or not (`start-adhering=0`). Then, in subsequent time-steps, the patients' states evolve based on their current state and whether they were intervened on by a healthcare worker according to a transition matrix.
 

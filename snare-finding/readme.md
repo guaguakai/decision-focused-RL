@@ -1,5 +1,7 @@
 This directory hosts the code for the snare finding problem.
 
+![alt text](https://github.com/guaguakai/decision-focused-RL/blob/main/figures/wildlife.gif?raw=true)
+
 ## Problem Description
 In the snare finding problem, we consider a set of 20 sites that are vulnerable to poaching activity. We randomly select 20% of the sites as high-risk locations where the probability of having a poacher coming and placing a snare is randomly drawn from a normal distribution N(0.8, 0.1), while the remaining 80% of low-risk sites with probability N(0.1, 0.05) having a poacher coming to place a snare.
 These transition probabilities are not known to the ranger, and the ranger has to rely on features of each individual site to predict the corresponding missing transition probability.
