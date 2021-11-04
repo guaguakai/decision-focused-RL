@@ -2,8 +2,9 @@
 
 NeurIPS 2021 Spotlight
 
-
-<img src="https://github.com/guaguakai/decision-focused-RL/blob/main/figures/framework.jpg?raw=true" width="75%" height="75%">
+<p align="center">
+    <img src="https://github.com/guaguakai/decision-focused-RL/blob/main/figures/framework.jpg?raw=true" width="75%" height="75%">
+</p>
 
 ## Project Description
 This repository contains the implementation of the paper.
