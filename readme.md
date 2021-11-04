@@ -22,16 +22,11 @@ In order to differentiate through the optimal solution to a sequential problem, 
 This paper studies two common optimality conditions in sequential problems: policy gradient and Bellman-based optimality conditions.
 However, the optimality and KKT conditions in sequential problems are often implicitly given.
 We therefore need to use policy gradient theorem and implement a differentiable environment to compute an unbiased estimate of the KKT conditions to differentiate through.
+
 Accordingly, we implement a PyTorch module where (i) the forward pass solves a seqeuntial problem with given parameters using reinforcement learning algorithms and (ii) the backward pass internally runs policy gradient theorem and maintains a differentiable (in PyTorch) gym environment to sample an unbiased KKT conditions to differentiate through.
 This differentiable RL solver is implemented in `diffq.py` (running tabular value-iteration algorithm for Gridworld example with missing reward function) and `diffdqn_transition.py` (running DDQN for snare findinig and tuberculosis treatement problems with missing transition probabilities).
 Both implementations include a differentiable reinforcement learning solver (tabular Q learning or DDQN) and a differentiable offline off-policy evaluation (OPE) module. 
 For DDQN, we modify from the implementation of [Stable-Baselines3](https://stable-baselines3.readthedocs.io/en/master/) to relax the Bellman update to a softer one similar to the idea of soft-Q learning.
-
-Within each example, a differentiable gym environment is implemented. This differentiable gym environment defines the sequential problem in each example and is used to be fed into the differentiable RL solver to achieve decision-focused learning.
-To train the predictive model using decision-focused learning, we feed the given problem features to a predictive model (to be learned) to generate predicted MDP parameters. 
-The predicted MDP parameters are fed into the differentiable RL solvers implemented in `diffq.py` or `diffdqn_transition.py` to get an optimal policy. 
-The optimal policy is fed into the differentiable OPE module to get the final OPE performance.
-In the backward pass, we can simply run `evaluation.backward()` to backpropagate from OPE through the differentiable RL solver to the predictive model to update the weights.
 
 
 ## To Run
